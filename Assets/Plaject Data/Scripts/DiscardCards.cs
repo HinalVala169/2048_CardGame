@@ -26,7 +26,7 @@ public class DiscardCards : MonoBehaviour
         if (count < 2)
         {
            // Debug.Log("..tyyy.....");
-           
+            CardManager.instance.RemoveCardFromList(card);
             Destroy(card.gameObject);
             CardManager.instance.SpawnCard.ShuffleCards(card);
             count++;

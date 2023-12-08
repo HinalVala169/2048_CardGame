@@ -47,7 +47,7 @@ public class SpawnCard : MonoBehaviour
     #region PRIVATE_FUNCTIONS
     private IEnumerator SpawnCards(int spawnCount)
     {
-        Debug.Log("count"+cardColors.Count);
+       // Debug.Log("count"+cardColors.Count);
         int randomIndex = Random.Range(0, cardColors.Count-1);
         
         Card cardObj = Instantiate(cardPrefab, transform);
@@ -56,7 +56,7 @@ public class SpawnCard : MonoBehaviour
         cardObj.cardNo.text = cardColors[randomIndex].index.ToString();
         cardObj.gameObject.transform.localPosition = cardPos2;
         cardObj.gameObject.name += 1;
-        Debug.Log(randomIndex);
+       // Debug.Log(randomIndex);
         spawnedCards.Add(cardObj);
         yield return null;
     }

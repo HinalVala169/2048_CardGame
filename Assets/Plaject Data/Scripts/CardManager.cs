@@ -49,6 +49,19 @@ public class CardManager : MonoBehaviour
             }
         }
     }
+
+     public void RemoveCardFromList(Card card)
+    {
+        foreach (var cardList in cardlists)
+        {
+            if (cardList.cardList.Contains(card))
+            {
+                cardList.cardList.Remove(card);
+                break;
+            }
+        }
+    }
+
     private bool IsFirstSpawnedCardEqualToListElement()
     {
         Debug.Log("Noo");

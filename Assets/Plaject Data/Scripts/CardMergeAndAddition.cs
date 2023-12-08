@@ -30,6 +30,7 @@ public class CardMergeAndAddition : MonoBehaviour
 
             if (currentCardNo == lastCardNo && currentList != null)
             {
+                Debug.Log("lastCardNo:" + lastCardNo );
                 mergedNumber = currentCardNo * 2;
                 newCard.transform.DOScale(targetScale, 0.1f).SetEase(Ease.InOutBounce);
                 StartCoroutine(MoveCardSmoothly(newCard.transform, newCard.transform.localPosition, lastAddedCard.transform.localPosition, 0.5f, () =>
@@ -62,9 +63,10 @@ public class CardMergeAndAddition : MonoBehaviour
         {
             Card previousCard = currentList.cardList[index - 1];
             int previousCardNo = int.Parse(previousCard.cardNo.text);
-
+            
             if (currentCardNo == previousCardNo)
             {
+                Debug.Log("lastCardNo:" + previousCardNo );
                 mergedNumber = currentCardNo * 2;
                 cardToMerge.transform.DOScale(targetScale, 0.1f).SetEase(Ease.InOutBounce);
                 StartCoroutine(MoveCardSmoothly(cardToMerge.transform, cardToMerge.transform.localPosition, previousCard.transform.localPosition, 0.5f, () =>
